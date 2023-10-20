@@ -1,10 +1,7 @@
-import { UserButton } from "@clerk/nextjs";
-
-import prismadb from "@/lib/prismadb";
+import prismadb from "@/lib/prismadb"
 import { Categories } from "@/components/categories"
 import { Companions } from "@/components/companions"
 import { SearchInput } from "@/components/search-input"
-
 
 interface RootPageProps {
   searchParams: {
@@ -12,7 +9,7 @@ interface RootPageProps {
     name: string;
   };
 };
- 
+
 const RootPage = async ({
   searchParams
 }: RootPageProps) => {
@@ -47,4 +44,3 @@ const RootPage = async ({
 }
 
 export default RootPage
-
