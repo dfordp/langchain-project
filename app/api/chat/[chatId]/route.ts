@@ -1,4 +1,4 @@
-import dotenv from "dotenv";
+
 import { StreamingTextResponse, LangChainStream } from "ai";
 import { auth, currentUser } from "@clerk/nextjs";
 import { Replicate } from "langchain/llms/replicate";
@@ -9,7 +9,7 @@ import { MemoryManager } from "@/lib/memory";
 import { rateLimit } from "@/lib/rate-limit";
 import prismadb from "@/lib/prismadb";
 
-dotenv.config({ path: `.env` });
+
 
 export async function POST(
   request: Request,
@@ -32,7 +32,7 @@ export async function POST(
 
     const companion = await prismadb.companion.update({
       where: {
-        id: params.chatId
+        id: params.chatId,
       },
       data: {
         messages: {
